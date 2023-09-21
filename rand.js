@@ -215,7 +215,7 @@ function getSeed(text) {
         sum += text.charCodeAt(i);
     }
     // 将和取模100，得到一个0-99的整数
-    var seed = sum % 100;
+    var seed = sum % 114514;
     // 返回种子
     return seed;
 }
@@ -255,7 +255,8 @@ function getItem(num, entry) {
     if (index != -1) {
         return items[entry][index];
     } else {
-        return "无效的数字";
+        // return "无效的数字";
+        return items[entry][-1];
     }
 }
 
@@ -305,3 +306,41 @@ function generate() {
     div.innerHTML = "亲爱的" + text + "博士，" + "你的法杖是一根" + data[0] + ", 主体由" + data[1] + "打造，辅以" + data[2] + "，并使用" + data[5] + "进行加工" + "。其施术单元由" + data[3] + "构成，循环及冷却系统是" + data[6] + ", 而核心的源石技艺回路材料是" + data[4] + "。这把法杖的制造的开销在" + data[7] + "，真是一把好法杖！"
 
 }
+
+// function printTable(tableId) {
+//     var data = [];
+//     // 将li数据赋值给数组
+//     data[0] = "法杖的形制(小-大；易操作-难使用)：1 杖/锤/棍";
+//     data[1] = "法杖的主体材质(粗加工-精加工；部件少-多)：21 异铁";
+//     data[2] = "法杖的次要材质(粗加工-精加工；部件少-多)：41 源石";
+//     data[3] = "法杖的施术单元(纯度/稀有度低-高；处理方式普通-特殊)：56 源石系列(60以上可设定为火锻/晶化等特殊处理)";
+//     data[4] = "法杖的源石技艺回路材料(简单-复杂；运转慢-快)：61 晶体系列";
+//     data[5] = "法杖的加工材料(粗加工-精加工；工艺简单-复杂)：11 切削液系列";
+//     data[6] = "法杖的循环及冷却系统(低效-高效)：31 普通的水";
+//     data[7] = "法杖的造价(廉价-昂贵)：91 >1000000元";
+//     // 获取表格的元素
+//     var table = document.getElementById("table");
+//     // 循环遍历数组中的每个元素
+//     for (var i = 0; i < data.length; i++) {
+//         // 创建一个表格行元素
+//         var tr = document.createElement("tr");
+//         // 创建一个表格单元格元素
+//         var td = document.createElement("td");
+//         // 设置单元格的内容为数组中的元素
+//         td.innerHTML = data[i];
+//         // 将单元格添加到行中
+//         tr.appendChild(td);
+//         // 将行添加到表格中
+//         table.appendChild(tr);
+//     }
+//     // 获取表格元素
+//     var table = document.getElementById(tableId);
+//     // 创建一个新的窗口
+//     var newWin = window.open("");
+//     // 将表格元素的HTML内容写入新窗口
+//     newWin.document.write(table.outerHTML);
+//     // 调用新窗口的打印方法
+//     newWin.print();
+//     // 关闭新窗口
+//     newWin.close();
+// }
