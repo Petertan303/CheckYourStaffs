@@ -302,9 +302,9 @@ function generate() {
         // 循环八次，生成八个条目的随机数和字符
         for (var i = 0; i < 8; i++) {
             // 根据条目获取范围
-            var range = [20, 40, 50, 60, 65, 90, 100, 100][i];
+            // var range = [20, 40, 50, 60, 65, 90, 100, 100][i];
             // 根据种子和范围生成一个随机数
-            var num = randomInt(seed, range);
+            var num = randomInt(seed, 100);
             // 根据随机数和条目获取对应的字符
             var item = getItem(num, i);
             // 创建一个列表项元素
