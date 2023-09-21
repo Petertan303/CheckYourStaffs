@@ -284,10 +284,15 @@ function generate() {
             var item = getItem(num, i);
             // 创建一个列表项元素
             var li = document.createElement("li");
+            li.style = "padding-top: 8px;"
+            var div1 = document.createElement("div");
+            var div2 = document.createElement("div");
             // 设置列表项的内容为条目、随机数和字符
-            // li.innerHTML = (i + 1) + "：" + num + " " + item;
-            li.innerHTML = titles[i] + "：" + num + " " + item;
-            li.innerHTML = titles[i] + "：" + num + " " + item;
+            // li.innerHTML = titles[i] + "：" + num + " " + item;
+            div1.innerHTML = titles[i] + ": " + item;
+            div2.innerHTML = "出值：" + num;
+            li.appendChild(div1);
+            li.appendChild(div2);
             data[i] = item;
             // 将列表项添加到列表中
             list.appendChild(li);
@@ -295,23 +300,6 @@ function generate() {
             seed = num;
         }
     }
-
-    // // 循环遍历二维数组中的每个元素
-    // for (var i = 0; i < data.length; i++) {
-    //     // 创建一个表格行元素
-    //     var tr = document.createElement("tr");
-    //     // 循环遍历二维数组中的每个子元素
-    //     for (var j = 0; j < data[i].length; j++) {
-    //         // 创建一个表格单元格元素
-    //         var td = document.createElement("td");
-    //         // 将二维数组中的子元素作为文本内容添加到单元格中
-    //         td.innerHTML = data[i][j];
-    //         // 将单元格添加到行中
-    //         tr.appendChild(td);
-    //     }
-    //     // 将行添加到表格中
-    //     table.appendChild(tr);
-    // }
 
     var div = document.getElementById("div");
     div.innerHTML = "你的法杖是一根" + data[0] + ", 主体由" + data[1] + "打造，辅以" + data[2] + "，并使用" + data[5] + "进行加工" + "。其施术单元由" + data[3] + "构成，循环及冷却系统是" + data[6] + ", 而核心的源石技艺回路材料是" + data[4] + "。这把法杖的制造的开销在" + data[7] + "，真是一把好法杖！"
