@@ -1,6 +1,3 @@
-// import * as chartjs from "./static/grade/assets/js/chart.min.js"
-// var Chart = require('chart.min.js');
-
 // 定义一个数组，存储对应的字符
 var items = [
     [
