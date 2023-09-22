@@ -428,28 +428,6 @@ function generate() {
         datasets: [{ label: text, backgroundColor: "#4e73df", borderColor: "#4e73df", data: data_int, fill: true }],
         // options: { maintainAspectRatio: true, legend: { display: false, labels: { fontStyle: normal } }, title: { fontStyle: bold }, scales: { xAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }], yAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }] } }
     };
-    // var rader_data = {
-    //     // 设置每个数据点的标签
-    //     labels: ["速度", "力量", "技巧", "耐力", "智慧"],
-    //     // 设置每个数据集的数据和样式
-    //     datasets: [{
-    //             // 设置数据集的标签
-    //             label: "王者荣耀",
-    //             // 设置数据集的数据
-    //             data: [80, 90, 70, 60, 50],
-    //             // 设置数据集的颜色
-    //             backgroundColor: "rgba(255, 99, 132, 0.2)",
-    //             borderColor: "rgb(255, 99, 132)",
-    //         },
-    //         {
-    //             label: "英雄联盟",
-    //             data: [70, 80, 60, 50, 40],
-    //             backgroundColor: "rgba(54, 162, 235, 0.2)",
-    //             borderColor: "rgb(54, 162, 235)",
-    //         },
-    //     ],
-    // };
-
 
     // 获取 canvas 元素
     var ctx = document.getElementById("radar_pic").getContext("2d");
