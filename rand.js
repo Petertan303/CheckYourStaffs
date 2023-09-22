@@ -1,3 +1,6 @@
+// import * as chartjs from "./static/grade/assets/js/chart.min.js"
+// var Chart = require('chart.min.js');
+
 // 定义一个数组，存储对应的字符
 var items = [
     [
@@ -367,6 +370,7 @@ function getItem(num, entry) {
 // 定义一个函数，生成十个随机数，并显示在列表中
 function generate() {
     var data = [];
+    var data_int = [];
 
     // 获取输入框的值
     var text = document.getElementById("text").value;
@@ -384,6 +388,7 @@ function generate() {
             // var range = [20, 40, 50, 60, 65, 90, 100, 100][i];
             // 根据种子和范围生成一个随机数
             var num = randomInt(seed, 100);
+            data_int[i] = num;
             // 根据随机数和条目获取对应的字符
             var item = getItem(num, i);
             // 创建一个列表项元素
@@ -405,54 +410,64 @@ function generate() {
         }
     }
 
+
     var div3 = document.getElementById("div3");
-    div3.style = "padding-top: 8px;"
-    div3.innerHTML = "亲爱的" + text + "博士，" + "你的法杖是一根" + data[0] + ", 主体由" + data[1] + "打造，辅以" + data[2] + "，并使用" + data[5] + "进行加工" + "。其施术单元由" + data[3] + "构成，循环及冷却系统是" + data[6] + ", 而核心的源石技艺回路材料是" + data[4] + "。这把法杖的制造的开销在" + data[7] + "，真是一把好法杖！"
+    div3.style = "padding-top: 8px;";
+    div3.innerHTML = "亲爱的" + text + "博士，" + "你的法杖是一根" + data[0] + ", 主体由" + data[1] + "打造，辅以" + data[2] + "，并使用" + data[5] + "进行加工" + "。其施术单元由" + data[3] + "构成，循环及冷却系统是" + data[6] + ", 而核心的源石技艺回路材料是" + data[4] + "。这把法杖的制造的开销在" + data[7] + "，真是一把好法杖！";
 
     var div4 = document.getElementById("div4");
-    div4.style = "padding-top: 8px; padding-bottom: 28px"
-    div4.innerHTML = "欢迎使用增值服务！经过知名专家鉴定，你的法杖产自于" + data[8] + "，新旧是" + data[9] + "，来自于" + data[11] + "，至于施法的手感，是一种" + data[10] + "。可喜可贺，可喜可贺！"
+    div4.style = "padding-top: 8px; padding-bottom: 28px";
+    div4.innerHTML = "欢迎使用增值服务！经过知名专家鉴定，你的法杖产自于" + data[8] + "，新旧是" + data[9] + "，来自于" + data[11] + "，至于施法的手感，是一种" + data[10] + "。可喜可贺，可喜可贺！";
 
     // var div5 = document.getElementById("div5")
     // div5.style = "padding-top: 8px; padding-bottom: 28px"
     // div5.innerHTML = "增值服务"
 
-}
+    var rader_data = {
+        labels: titles,
+        datasets: [{ label: text, backgroundColor: "#4e73df", borderColor: "#4e73df", data: data_int, fill: true }],
+        // options: { maintainAspectRatio: true, legend: { display: false, labels: { fontStyle: normal } }, title: { fontStyle: bold }, scales: { xAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }], yAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }] } }
+    };
+    // var rader_data = {
+    //     // 设置每个数据点的标签
+    //     labels: ["速度", "力量", "技巧", "耐力", "智慧"],
+    //     // 设置每个数据集的数据和样式
+    //     datasets: [{
+    //             // 设置数据集的标签
+    //             label: "王者荣耀",
+    //             // 设置数据集的数据
+    //             data: [80, 90, 70, 60, 50],
+    //             // 设置数据集的颜色
+    //             backgroundColor: "rgba(255, 99, 132, 0.2)",
+    //             borderColor: "rgb(255, 99, 132)",
+    //         },
+    //         {
+    //             label: "英雄联盟",
+    //             data: [70, 80, 60, 50, 40],
+    //             backgroundColor: "rgba(54, 162, 235, 0.2)",
+    //             borderColor: "rgb(54, 162, 235)",
+    //         },
+    //     ],
+    // };
 
-// function printTable(tableId) {
-//     var data = [];
-//     // 将li数据赋值给数组
-//     data[0] = "法杖的形制(小-大；易操作-难使用)：1 杖/锤/棍";
-//     data[1] = "法杖的主体材质(粗加工-精加工；部件少-多)：21 异铁";
-//     data[2] = "法杖的次要材质(粗加工-精加工；部件少-多)：41 源石";
-//     data[3] = "法杖的施术单元(纯度/稀有度低-高；处理方式普通-特殊)：56 源石系列(60以上可设定为火锻/晶化等特殊处理)";
-//     data[4] = "法杖的源石技艺回路材料(简单-复杂；运转慢-快)：61 晶体系列";
-//     data[5] = "法杖的加工材料(粗加工-精加工；工艺简单-复杂)：11 切削液系列";
-//     data[6] = "法杖的循环及冷却系统(低效-高效)：31 普通的水";
-//     data[7] = "法杖的造价(廉价-昂贵)：91 >1000000元";
-//     // 获取表格的元素
-//     var table = document.getElementById("table");
-//     // 循环遍历数组中的每个元素
-//     for (var i = 0; i < data.length; i++) {
-//         // 创建一个表格行元素
-//         var tr = document.createElement("tr");
-//         // 创建一个表格单元格元素
-//         var td = document.createElement("td");
-//         // 设置单元格的内容为数组中的元素
-//         td.innerHTML = data[i];
-//         // 将单元格添加到行中
-//         tr.appendChild(td);
-//         // 将行添加到表格中
-//         table.appendChild(tr);
-//     }
-//     // 获取表格元素
-//     var table = document.getElementById(tableId);
-//     // 创建一个新的窗口
-//     var newWin = window.open("");
-//     // 将表格元素的HTML内容写入新窗口
-//     newWin.document.write(table.outerHTML);
-//     // 调用新窗口的打印方法
-//     newWin.print();
-//     // 关闭新窗口
-//     newWin.close();
-// }
+
+    // 获取 canvas 元素
+    var ctx = document.getElementById("radar_pic").getContext("2d");
+
+    // 创建一个图表对象
+    var radar_pic = new Chart(ctx, {
+        // 指定图表类型为雷达图
+        type: "radar",
+        // 指定图表的数据和配置项
+        data: rader_data, // 使用你提供的数据
+        options: {
+            responsive: true, // 设置图表为响应式，根据屏幕窗口变化而变化
+            maintainAspectRatio: false, // 保持图表原有比例
+            elements: {
+                line: {
+                    borderWidth: 3 // 设置线条宽度
+                }
+            }
+        }
+    });
+}
