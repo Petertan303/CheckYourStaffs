@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/profile/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="static/profile/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- <link href="app.css" rel="stylesheet"> -->
     <!-- <style>
         body {
@@ -28,7 +29,7 @@
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="width: 90px;">
+        <!-- <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="width: 90px;">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="../profile">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
@@ -37,13 +38,32 @@
                 <hr class="sidebar-divider my-0">
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
-        </nav>
+        </nav> -->
+        <div class="offcanvas offcanvas-start  bg-gradient-primary " tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" style="width: 250px;">
+            <div class="offcanvas-body">
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" style="margin-right: -15px;padding-left: 5px;padding-top: 20px;margin-bottom: 0px;" href="../profile"><i class="fas fa-user" style="width: 11.9;"></i><span>   Profile</span></a></li>
+                    <li class="nav-item"><a class="nav-link" style="margin-right: -15px;padding-left: 5px;padding-top: 20px;" href="../testing_bank"><i class="fas fa-microphone" style="width: 11.9px;"></i><span>   Speaking Test</span></a></li>
+                    <li class="nav-item"><a class="nav-link" style="margin-right: -15px;padding-left: 5px;padding-top: 20px;" href="../grade"><i class="fas fa-clipboard" style="width: 11.9px;margin-right: 2px;padding-left: 0px;margin-left: 0px;"></i><span style="padding-left: 0px;margin-left: 2px;">   Grades</span></a></li>
+                    <li class="nav-item"><a class="nav-link" style="margin-right: -15px;padding-left: 5px;padding-top: 20px;" href="../settings"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" data-bs-toggle="offcanvas" href="#offcanvas" role="button" aria-controls="offcanvas" style="padding-left:15px;">
+                        <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-arrow-right" style="color: #ffffff;"></i></div>
+                        <div class="sidebar-brand-text mx-3"><span>Show side bar</span></div>
+                    </a>
                     <div class="container-fluid">
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <div class="d-none d-sm-block topbar-divider"></div>
+                            <!-- <li class="nav-item"><a class="nav-link" style="padding-right: 5px;color: #FFFFFF;" href="../testing_bank"><i class="fas fa-microphone" style="width: 11.9px;"></i><span style="padding-left: 5px;">   Test</span></a></li>
+                            <li class="nav-item"><a class="nav-link" style="padding-right: 5px;color: #FFFFFF;" href="../grade"><i class="fas fa-clipboard" style="width: 11.9px;margin-right: 2px;padding-left: 0px;margin-left: 0px;"></i><span style="padding-left: 5px;margin-left: 2px;">   Grade</span></a></li>
+                            <li class="nav-item"><a class="nav-link" style="padding-right: 5px;color: #FFFFFF;margin-bottom: 0px;" href="../profile"><i class="fas fa-user" style="width: 11.9;"></i><span style="padding-left: 5px;">   Profile</span></a></li> -->
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Name</span><img class="border rounded-circle img-profile" src="https://ts1.cn.mm.bing.net/th/id/R-C.5cf32306964edb85eee97858641bbaa5?rik=Qfaaz3ebjRMrAg&amp;riu=http%3a%2f%2fpic.616pic.com%2fys_img%2f00%2f04%2f45%2fB98tg4SeIs.jpg&amp;ehk=KWu4l1ltCRmNh4nwz8gwopU65thfexHaIZo9NmMBdVs%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="../settings"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a>
@@ -87,6 +107,8 @@
         <script src="bs-init.js"></script>
         <script src="chart.min.js"></script>
         <script src="rand.js"></script>
+        <script src="index.js"></script>
+        <script src="jquery-1.11.0.min.js"></script>
 </body>
 
 </html>
