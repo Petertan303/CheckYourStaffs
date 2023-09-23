@@ -168,6 +168,20 @@ var titles = [
     "法杖的手感(硌手-丝滑)",
     "来自的时代"
 ];
+var titles_short = [
+    "形制",
+    "主体材质",
+    "次要材质",
+    "施术单元",
+    "源石技艺回路材料",
+    "加工材料",
+    "循环及冷却系统",
+    "造价",
+    "产地",
+    "新旧",
+    "手感",
+    "来自的时代"
+];
 
 // 定义一个数组，存储对应的区间
 var intervals = [
@@ -421,7 +435,7 @@ function generate() {
     // div5.innerHTML = "增值服务"
 
     var rader_data = {
-        labels: titles,
+        labels: titles_short,
         datasets: [{ label: text, backgroundColor: "#4e73df", borderColor: "#4e73df", data: data_int, fill: true }],
         // options: { maintainAspectRatio: true, legend: { display: false, labels: { fontStyle: normal } }, title: { fontStyle: bold }, scales: { xAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }], yAxes: [{ gridLines: { drawTicks: true }, ticks: { fontStyle: normal } }] } }
     };
